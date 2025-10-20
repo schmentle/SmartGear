@@ -1,0 +1,262 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\yentl\\source\\repos\\SmartGear.PM0902\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{FBCB61AA-0B1E-44FE-CBDF-56D75BAF580F}|SmartGear.PM0902.csproj|c:\\users\\yentl\\source\\repos\\smartgear.pm0902\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{FBCB61AA-0B1E-44FE-CBDF-56D75BAF580F}|SmartGear.PM0902.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FBCB61AA-0B1E-44FE-CBDF-56D75BAF580F}|SmartGear.PM0902.csproj|c:\\users\\yentl\\source\\repos\\smartgear.pm0902\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{FBCB61AA-0B1E-44FE-CBDF-56D75BAF580F}|SmartGear.PM0902.csproj|solutionrelative:appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FBCB61AA-0B1E-44FE-CBDF-56D75BAF580F}|SmartGear.PM0902.csproj|c:\\users\\yentl\\source\\repos\\smartgear.pm0902\\appsettings.production.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{FBCB61AA-0B1E-44FE-CBDF-56D75BAF580F}|SmartGear.PM0902.csproj|solutionrelative:appsettings.production.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FBCB61AA-0B1E-44FE-CBDF-56D75BAF580F}|SmartGear.PM0902.csproj|c:\\users\\yentl\\source\\repos\\smartgear.pm0902\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FBCB61AA-0B1E-44FE-CBDF-56D75BAF580F}|SmartGear.PM0902.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FBCB61AA-0B1E-44FE-CBDF-56D75BAF580F}|SmartGear.PM0902.csproj|c:\\users\\yentl\\source\\repos\\smartgear.pm0902\\views\\product\\ui.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{FBCB61AA-0B1E-44FE-CBDF-56D75BAF580F}|SmartGear.PM0902.csproj|solutionrelative:views\\product\\ui.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FBCB61AA-0B1E-44FE-CBDF-56D75BAF580F}|SmartGear.PM0902.csproj|c:\\users\\yentl\\source\\repos\\smartgear.pm0902\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FBCB61AA-0B1E-44FE-CBDF-56D75BAF580F}|SmartGear.PM0902.csproj|solutionrelative:controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FBCB61AA-0B1E-44FE-CBDF-56D75BAF580F}|SmartGear.PM0902.csproj|c:\\users\\yentl\\source\\repos\\smartgear.pm0902\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{FBCB61AA-0B1E-44FE-CBDF-56D75BAF580F}|SmartGear.PM0902.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FBCB61AA-0B1E-44FE-CBDF-56D75BAF580F}|SmartGear.PM0902.csproj|c:\\users\\yentl\\source\\repos\\smartgear.pm0902\\repositories\\productrepositorycached.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FBCB61AA-0B1E-44FE-CBDF-56D75BAF580F}|SmartGear.PM0902.csproj|solutionrelative:repositories\\productrepositorycached.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FBCB61AA-0B1E-44FE-CBDF-56D75BAF580F}|SmartGear.PM0902.csproj|c:\\users\\yentl\\source\\repos\\smartgear.pm0902\\repositories\\implementations.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FBCB61AA-0B1E-44FE-CBDF-56D75BAF580F}|SmartGear.PM0902.csproj|solutionrelative:repositories\\implementations.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FBCB61AA-0B1E-44FE-CBDF-56D75BAF580F}|SmartGear.PM0902.csproj|c:\\users\\yentl\\source\\repos\\smartgear.pm0902\\controllers\\storecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FBCB61AA-0B1E-44FE-CBDF-56D75BAF580F}|SmartGear.PM0902.csproj|solutionrelative:controllers\\storecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FBCB61AA-0B1E-44FE-CBDF-56D75BAF580F}|SmartGear.PM0902.csproj|c:\\users\\yentl\\source\\repos\\smartgear.pm0902\\repositories\\contracts.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FBCB61AA-0B1E-44FE-CBDF-56D75BAF580F}|SmartGear.PM0902.csproj|solutionrelative:repositories\\contracts.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FBCB61AA-0B1E-44FE-CBDF-56D75BAF580F}|SmartGear.PM0902.csproj|c:\\users\\yentl\\source\\repos\\smartgear.pm0902\\views\\store\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{FBCB61AA-0B1E-44FE-CBDF-56D75BAF580F}|SmartGear.PM0902.csproj|solutionrelative:views\\store\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FBCB61AA-0B1E-44FE-CBDF-56D75BAF580F}|SmartGear.PM0902.csproj|c:\\users\\yentl\\source\\repos\\smartgear.pm0902\\hubs\\producthub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FBCB61AA-0B1E-44FE-CBDF-56D75BAF580F}|SmartGear.PM0902.csproj|solutionrelative:hubs\\producthub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FBCB61AA-0B1E-44FE-CBDF-56D75BAF580F}|SmartGear.PM0902.csproj|c:\\users\\yentl\\source\\repos\\smartgear.pm0902\\infrastructure\\caching\\cachekeys.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FBCB61AA-0B1E-44FE-CBDF-56D75BAF580F}|SmartGear.PM0902.csproj|solutionrelative:infrastructure\\caching\\cachekeys.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\yentl\\source\\repos\\SmartGear.PM0902\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Users\\yentl\\source\\repos\\SmartGear.PM0902\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-10-19T21:46:52.618Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "C:\\Users\\yentl\\source\\repos\\SmartGear.PM0902\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "appsettings.Development.json",
+              "ToolTip": "C:\\Users\\yentl\\source\\repos\\SmartGear.PM0902\\appsettings.Development.json",
+              "RelativeToolTip": "appsettings.Development.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-10-19T21:46:44.169Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "appsettings.Production.json",
+              "DocumentMoniker": "C:\\Users\\yentl\\source\\repos\\SmartGear.PM0902\\appsettings.Production.json",
+              "RelativeDocumentMoniker": "appsettings.Production.json",
+              "ToolTip": "C:\\Users\\yentl\\source\\repos\\SmartGear.PM0902\\appsettings.Production.json",
+              "RelativeToolTip": "appsettings.Production.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-10-19T21:46:27.869Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Ui.cshtml",
+              "DocumentMoniker": "C:\\Users\\yentl\\source\\repos\\SmartGear.PM0902\\Views\\Product\\Ui.cshtml",
+              "RelativeDocumentMoniker": "Views\\Product\\Ui.cshtml",
+              "ToolTip": "C:\\Users\\yentl\\source\\repos\\SmartGear.PM0902\\Views\\Product\\Ui.cshtml",
+              "RelativeToolTip": "Views\\Product\\Ui.cshtml",
+              "ViewState": "AgIAAD8AAAAAAAAAAAAAAP4AAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-19T21:23:46.286Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ProductController.cs",
+              "DocumentMoniker": "C:\\Users\\yentl\\source\\repos\\SmartGear.PM0902\\Controllers\\ProductController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ProductController.cs",
+              "ToolTip": "C:\\Users\\yentl\\source\\repos\\SmartGear.PM0902\\Controllers\\ProductController.cs",
+              "RelativeToolTip": "Controllers\\ProductController.cs",
+              "ViewState": "AgIAACwAAAAAAAAAAAAcwDkAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-19T21:19:14.812Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "StoreController.cs",
+              "DocumentMoniker": "C:\\Users\\yentl\\source\\repos\\SmartGear.PM0902\\Controllers\\StoreController.cs",
+              "RelativeDocumentMoniker": "Controllers\\StoreController.cs",
+              "ToolTip": "C:\\Users\\yentl\\source\\repos\\SmartGear.PM0902\\Controllers\\StoreController.cs",
+              "RelativeToolTip": "Controllers\\StoreController.cs",
+              "ViewState": "AgIAALQAAAAAAAAAAAAiwMUAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-19T21:00:03.128Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Contracts.cs",
+              "DocumentMoniker": "C:\\Users\\yentl\\source\\repos\\SmartGear.PM0902\\Repositories\\Contracts.cs",
+              "RelativeDocumentMoniker": "Repositories\\Contracts.cs",
+              "ToolTip": "C:\\Users\\yentl\\source\\repos\\SmartGear.PM0902\\Repositories\\Contracts.cs",
+              "RelativeToolTip": "Repositories\\Contracts.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-19T20:57:31.386Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\yentl\\source\\repos\\SmartGear.PM0902\\Views\\Store\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Store\\Index.cshtml",
+              "ToolTip": "C:\\Users\\yentl\\source\\repos\\SmartGear.PM0902\\Views\\Store\\Index.cshtml",
+              "RelativeToolTip": "Views\\Store\\Index.cshtml",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABQAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-19T20:53:31.21Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\yentl\\source\\repos\\SmartGear.PM0902\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\yentl\\source\\repos\\SmartGear.PM0902\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAuwCUAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-19T20:52:50.584Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Implementations.cs",
+              "DocumentMoniker": "C:\\Users\\yentl\\source\\repos\\SmartGear.PM0902\\Repositories\\Implementations.cs",
+              "RelativeDocumentMoniker": "Repositories\\Implementations.cs",
+              "ToolTip": "C:\\Users\\yentl\\source\\repos\\SmartGear.PM0902\\Repositories\\Implementations.cs",
+              "RelativeToolTip": "Repositories\\Implementations.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAQwBoAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-19T20:51:03.638Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "ProductHub.cs",
+              "DocumentMoniker": "C:\\Users\\yentl\\source\\repos\\SmartGear.PM0902\\Hubs\\ProductHub.cs",
+              "RelativeDocumentMoniker": "Hubs\\ProductHub.cs",
+              "ToolTip": "C:\\Users\\yentl\\source\\repos\\SmartGear.PM0902\\Hubs\\ProductHub.cs",
+              "RelativeToolTip": "Hubs\\ProductHub.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-19T20:50:30.791Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ProductRepositoryCached.cs",
+              "DocumentMoniker": "C:\\Users\\yentl\\source\\repos\\SmartGear.PM0902\\Repositories\\ProductRepositoryCached.cs",
+              "RelativeDocumentMoniker": "Repositories\\ProductRepositoryCached.cs",
+              "ToolTip": "C:\\Users\\yentl\\source\\repos\\SmartGear.PM0902\\Repositories\\ProductRepositoryCached.cs",
+              "RelativeToolTip": "Repositories\\ProductRepositoryCached.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAABQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-19T20:39:54.38Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "CacheKeys.cs",
+              "DocumentMoniker": "C:\\Users\\yentl\\source\\repos\\SmartGear.PM0902\\Infrastructure\\Caching\\CacheKeys.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Caching\\CacheKeys.cs",
+              "ToolTip": "C:\\Users\\yentl\\source\\repos\\SmartGear.PM0902\\Infrastructure\\Caching\\CacheKeys.cs",
+              "RelativeToolTip": "Infrastructure\\Caching\\CacheKeys.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-19T20:39:17.898Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\yentl\\source\\repos\\SmartGear.PM0902\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\yentl\\source\\repos\\SmartGear.PM0902\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAACIAAABSAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-19T20:38:05.922Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

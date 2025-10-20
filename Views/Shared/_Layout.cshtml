@@ -1,0 +1,79 @@
+﻿@{
+    var title = ViewData["Title"] as string ?? "SmartGear Online";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>@title - SmartGear</title>
+
+    <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
+    @RenderSection("Head", required: false)
+</head>
+<body>
+    <header>
+        @await Component.InvokeAsync("MainNav")   
+    </header>
+
+    <main class="container py-4">
+        <partial name="_Flash" />
+        @RenderBody()
+    </main>
+
+    <footer class="border-top mt-5">
+        <div class="container py-3 text-muted small">
+            © @DateTime.Now.Year SmartGear • <a asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/bundle.min.js" asp-append-version="true"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/8.0.7/signalr.min.js"></script>
+    <script>
+        (function(){
+          const conn = new signalR.HubConnectionBuilder()
+            .withUrl("/hubs/products")
+            .withAutomaticReconnect()
+            .build();
+
+          conn.on("ProductCreated", p => {
+            // append a row (very simple demo)
+            const tbody = document.querySelector("#products tbody");
+            if (!tbody) return;
+            const tr = document.createElement("tr");
+            tr.id = `prod-${p.id}`;
+            tr.innerHTML = `<td>${p.name}</td><td>${p.basePrice}</td><td><a href="/store/details/${p.slug}">View</a></td>`;
+            tbody.prepend(tr);
+            flash("Product created: " + p.name);
+          });
+
+          conn.on("ProductUpdated", p => {
+            const tr = document.querySelector(`#prod-${p.id}`);
+            if (tr) {
+              tr.children[0].textContent = p.name;
+              tr.children[1].textContent = p.basePrice;
+              flash("Product updated: " + p.name);
+            }
+          });
+
+          conn.on("ProductDeleted", msg => {
+            const tr = document.querySelector(`#prod-${msg.id}`);
+            if (tr) tr.remove();
+            flash("Product deleted: #" + msg.id);
+          });
+
+          conn.start().catch(err => console.error(err.toString()));
+
+          function flash(text){
+            const el = document.getElementById("toast");
+            if(!el) return;
+            el.textContent = text;
+            el.classList.add("show");
+            setTimeout(() => el.classList.remove("show"), 2000);
+          }
+        })();
+    </script>
+    @RenderSection("Scripts", required: false)  
+</body>
+</html>

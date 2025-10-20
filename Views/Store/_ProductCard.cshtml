@@ -1,0 +1,15 @@
+﻿@model Product
+<div class="card h-100">
+    <div class="card-body">
+        <h5 class="card-title">@Model.Name</h5>
+        <p class="card-text mb-2">R @Model.BasePrice</p>
+        <a class="btn btn-sm btn-outline-secondary"
+           asp-controller="Store" asp-action="Details" asp-route-slug="@Model.Slug">
+            View
+        </a>
+        <a class="btn btn-sm btn-outline-primary"
+           asp-controller="Store" asp-action="Edit" asp-route-id="@Model.Id">
+            Edit
+        </a>
+    </div>
+</div>

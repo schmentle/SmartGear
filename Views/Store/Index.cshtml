@@ -1,0 +1,67 @@
+﻿@model IEnumerable<SmartGear.PM0902.Models.Product>
+@{
+    ViewData["Title"] = "Products";
+}
+<div id="toast" class="toast"></div>
+<section class="d-flex align-items-center justify-content-between mb-3">
+    <h1 class="h3 m-0">Products</h1>
+    <a class="btn btn-primary" asp-action="Create" asp-controller="Store">
+        <i class="bi bi-plus-lg"></i> New Product
+    </a>
+</section>
+
+<table id="products" class="table table-hover align-middle">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th class="text-end">Price</th>
+            <th>Category</th>
+            <th class="text-end">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var p in Model)
+        {
+            <tr>
+                <td>
+                    <a asp-action="Details" asp-route-slug="@p.Slug" class="link-underline link-underline-opacity-0">
+                        @p.Name
+                    </a>
+                    @if (!p.IsActive)
+                    {
+                        <span class="badge bg-secondary ms-2">Inactive</span>
+                    }
+                </td>
+                <td class="text-end">R @p.DiscountedPrice.ToString("0.00")</td>
+                <td>@p.Category?.Name</td>
+                <td class="text-end">
+                    <a class="btn btn-sm btn-outline-primary me-1" asp-action="Edit" asp-route-id="@p.Id">Edit</a>
+                    <a class="btn btn-sm btn-outline-danger" asp-action="Delete" asp-route-id="@p.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<style>
+    .toast {
+        opacity: 0;
+        transition: opacity .2s;
+        position: fixed;
+        right: 1rem;
+        top: 1rem;
+        background: #333;
+        color: #fff;
+        padding: .5rem .75rem;
+        border-radius: .5rem
+    }
+
+        .toast.show {
+            opacity: 1
+        }
+</style>
+
+@section Scripts {
+    <script>
+        console.debug("Store/Index loaded");
+    </script>
+}

@@ -1,0 +1,48 @@
+﻿@model SmartGear.PM0902.ViewModels.ProductFormViewModel
+@{
+    ViewData["Title"] = "Create Product";
+}
+
+<h1 class="h4 mb-3">Create Product</h1>
+
+<form asp-action="Create" method="post" class="row gy-3 g-3">
+    <div class="col-md-6">
+        <label asp-for="Name" class="form-label"></label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+
+    <div class="col-md-3">
+        <label asp-for="BasePrice" class="form-label"></label>
+        <input asp-for="BasePrice" class="form-control" />
+        <span asp-validation-for="BasePrice" class="text-danger"></span>
+    </div>
+
+    <div class="col-md-3">
+        <label asp-for="DiscountPercent" class="form-label"></label>
+        <input asp-for="DiscountPercent" class="form-control" />
+        <span asp-validation-for="DiscountPercent" class="text-danger"></span>
+    </div>
+
+    <div class="col-md-6">
+        <label asp-for="CategoryId" class="form-label">Category</label>
+        <select asp-for="CategoryId" asp-items="Model.Categories" class="form-select">
+            <option value="">-- choose --</option>
+        </select>
+        <span asp-validation-for="CategoryId" class="text-danger"></span>
+    </div>
+
+    <div class="col-md-6 form-check pt-4">
+        <input class="form-check-input" asp-for="IsActive" />
+        <label class="form-check-label" asp-for="IsActive"></label>
+    </div>
+
+    <div class="col-12 d-flex gap-2">
+        <button type="submit" class="btn btn-primary">Save</button>
+        <a asp-action="Index" class="btn btn-outline-secondary">Cancel</a>
+    </div>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

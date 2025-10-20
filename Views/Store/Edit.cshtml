@@ -1,0 +1,30 @@
+﻿@model Product
+@{
+    ViewData["Title"] = "Edit Product";
+}
+<h1>Edit Product</h1>
+
+<form asp-action="Edit" method="post">
+    <input asp-for="Id" type="hidden" />
+    <div class="mb-3">
+        <label asp-for="Name" class="form-label"></label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="BasePrice" class="form-label"></label>
+        <input asp-for="BasePrice" class="form-control" />
+        <span asp-validation-for="BasePrice" class="text-danger"></span>
+    </div>
+    <div class="form-check mb-3">
+        <input asp-for="IsActive" class="form-check-input" />
+        <label asp-for="IsActive" class="form-check-label"></label>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Update</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

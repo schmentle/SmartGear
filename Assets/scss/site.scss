@@ -1,0 +1,27 @@
+﻿@use "sass:color";
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+:root {
+    --sg-primary: #0d6efd;
+    --sg-accent: #6610f2;
+}
+
+.navbar-brand {
+    letter-spacing: .3px;
+}
+
+.btn-primary {
+    background: var(--sg-primary);
+    border-color: var(--sg-primary);
+}
+
+.table td, .table th {
+    vertical-align: middle;
+}
+
+/* Responsive tweak example */
+@media (max-width: 576px) {
+    .product-card {
+        margin-bottom: 1rem;
+    }
+}

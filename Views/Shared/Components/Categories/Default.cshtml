@@ -1,0 +1,12 @@
+﻿@model IEnumerable<string>
+<div class="card mb-3">
+    <div class="card-header">Categories</div>
+    <ul class="list-group list-group-flush">
+        @foreach (var c in Model)
+        {
+            <li class="list-group-item">
+                <a asp-controller="Store" asp-action="Index" asp-route-category="@c">@c</a>
+            </li>
+        }
+    </ul>
+</div>

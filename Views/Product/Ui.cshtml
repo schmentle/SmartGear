@@ -1,0 +1,280 @@
+﻿@{
+    Layout = "_Layout"; 
+    ViewData["Title"] = "Products UI (PM0912)";
+}
+<div class="container py-4">
+    <h1 class="mb-3">Products</h1>
+
+    <!-- Alerts / status -->
+    <div id="status" class="alert d-none" role="alert"></div>
+
+    <!-- Create / Update form -->
+    <form id="product-form" class="border rounded p-3 mb-4">
+        <div class="row g-3 align-items-end">
+            <div class="col-md-2">
+                <label class="form-label">Id</label>
+                <input type="number" class="form-control" id="p-id" placeholder="(auto)" readonly>
+            </div>
+            <div class="col-md-3">
+                <label class="form-label">Name</label>
+                <input type="text" class="form-control" id="p-name" required>
+            </div>
+            <div class="col-md-3">
+                <label class="form-label">Description</label>
+                <input type="text" class="form-control" id="p-desc">
+            </div>
+            <div class="col-md-2">
+                <label class="form-label">Price</label>
+                <input type="number" step="0.01" class="form-control" id="p-price" required>
+            </div>
+            <div class="col-md-2 d-flex gap-2">
+                <button type="submit" id="btn-save" class="btn btn-primary flex-fill">Save</button>
+                <button type="button" id="btn-reset" class="btn btn-secondary">Reset</button>
+            </div>
+        </div>
+        <small class="text-muted d-block mt-2">
+            CHANGE: Align fields with your <code>Product</code> model (e.g., add Stock, Sku). The API expects JSON.
+        </small>
+    </form>
+
+    <!-- Table -->
+    <div class="d-flex justify-content-between align-items-center mb-2">
+        <h5 class="m-0">Product List</h5>
+        <button id="btn-refresh" class="btn btn-outline-primary btn-sm">Refresh</button>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-striped align-middle" id="products-table">
+            <thead>
+                <tr>
+                    <th style="width:90px;">Id</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th style="width:140px;">Price</th>
+                    <th style="width:180px;">Actions</th>
+                </tr>
+            </thead>
+            <tbody><!-- populated by JS --></tbody>
+        </table>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+    <script>
+        // ====== CONFIG ======
+        const baseUrl = "/products"; 
+        const ADMIN_HEADER_NAME = "X-Admin"; 
+        const ADMIN_HEADER_VALUE = "true";
+
+        // ====== UTIL ======
+        function setStatus(kind, msg) {
+            const $s = $("#status");
+            $s.removeClass("d-none alert-primary alert-success alert-danger alert-warning");
+            $s.addClass("alert-" + kind).text(msg);
+            if (kind !== "danger") {
+                setTimeout(() => $s.addClass("d-none"), 2200);
+            }
+        }
+        function toCurrency(v) {
+            if (v == null || v === "") return "";
+            return Number(v).toFixed(2);
+        }
+        function readForm() {
+            const id = $("#p-id").val();
+            return {
+                id: id ? Number(id) : 0,
+                name: $("#p-name").val()?.trim(),
+                basePrice: Number($("#p-price").val() || 0),
+                discountPercent: 0,           
+                categoryId: 1,                
+                isActive: true                
+            };
+        }
+        function fillForm(p) {
+            $("#p-id").val(p?.id || "");
+            $("#p-name").val(p?.name || "");
+            $("#p-desc").val(p?.description || "");
+            $("#p-price").val(p?.basePrice ?? "");
+        }
+        function resetForm() {
+            fillForm({});
+            $("#btn-save").text("Save");
+        }
+        function rowHtml(p) {
+            const id = p.id;
+            return `
+                <tr data-id="${id}">
+                    <td>${id}</td>
+                    <td class="p-name">${escapeHtml(p.name ?? "")}</td>
+                    <td class="p-desc">${escapeHtml(p.description ?? "")}</td>
+                    <td class="p-price">${toCurrency(p.basePrice)}</td>
+                    <td>
+                        <div class="btn-group btn-group-sm">
+                            <button class="btn btn-outline-secondary act-edit">Edit</button>
+                            <button class="btn btn-outline-info act-view">View</button>
+                            <button class="btn btn-outline-danger act-del">Delete</button>
+                        </div>
+                    </td>
+                </tr>`;
+        }
+        function escapeHtml(str) {
+            return (str ?? "").replace(/[&<>"']/g, s => ({
+                "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"
+            }[s]));
+        }
+
+        // ====== CRUD CALLS (jQuery AJAX) ======
+        function listProducts() {
+            return $.ajax({
+                url: baseUrl,
+                method: "GET",
+                dataType: "json"
+            }).done(data => {
+                const rows = (data || []).map(rowHtml).join("");
+                $("#products-table tbody").html(rows);
+                setStatus("primary", "Loaded products.");
+            }).fail(xhr => setStatus("danger", `Load failed: ${xhr.status} ${xhr.statusText}`));
+        }
+
+        function getProduct(id) {
+            return $.ajax({
+                url: `${baseUrl}/${id}`,
+                method: "GET",
+                dataType: "json"
+            });
+        }
+
+        function createProduct(dto) {
+            return $.ajax({
+                url: baseUrl,
+                method: "POST",
+                headers: {
+                    [ADMIN_HEADER_NAME]: ADMIN_HEADER_VALUE
+                },
+                contentType: "application/json",
+                data: JSON.stringify(dto),
+                dataType: "json"
+            });
+        }
+
+        function updateProduct(id, dto) {
+            return $.ajax({
+                url: `${baseUrl}/${id}`,
+                method: "PUT",
+                headers: {
+                    [ADMIN_HEADER_NAME]: ADMIN_HEADER_VALUE
+                },
+                contentType: "application/json",
+                data: JSON.stringify(dto)
+            });
+        }
+
+        function deleteProduct(id) {
+            return $.ajax({
+                url: `${baseUrl}/${id}`,
+                method: "DELETE",
+                headers: {
+                    [ADMIN_HEADER_NAME]: ADMIN_HEADER_VALUE
+                }
+            });
+        }
+
+        // ====== EVENT WIRING ======
+        $(document).ready(function () {
+            // initial load
+            listProducts();
+
+            // Refresh
+            $("#btn-refresh").on("click", function () {
+                listProducts();
+            });
+
+            // Reset
+            $("#btn-reset").on("click", function () {
+                resetForm();
+            });
+
+            // Save (Create or Update)
+            $("#product-form").on("submit", function (e) {
+                e.preventDefault();
+                const dto = readForm();
+
+                if (!dto.name || isNaN(dto.basePrice)) {
+                    setStatus("warning", "Please provide at least Name and Price.");
+                    return;
+                }
+
+                // If Id is present -> Update; otherwise -> Create
+                if (dto.id && dto.id > 0) {
+                    updateProduct(dto.id, dto).done(() => {
+                        const $row = $(`#products-table tbody tr[data-id='${dto.id}']`);
+                        $row.find(".p-name").text(dto.name);
+                        $row.find(".p-desc").text(dto.description ?? "");
+                        $row.find(".p-price").text(toCurrency(dto.price));
+                        setStatus("success", "Product updated.");
+                        resetForm();
+                    }).fail(xhr => {
+                        setStatus("danger", `Update failed: ${xhr.status} ${xhr.responseText || xhr.statusText}`);
+                    });
+                } else {
+                    createProduct(dto).done((created) => {
+                        $("#products-table tbody").prepend(rowHtml(created));
+                        setStatus("success", "Product created.");
+                        resetForm();
+                    }).fail(xhr => {
+                        setStatus("danger", `Create failed: ${xhr.status} ${xhr.responseText || xhr.statusText}`);
+                    });
+                }
+            });
+
+            // Row actions (Edit / View / Delete)
+            $("#products-table").on("click", ".act-edit", function () {
+                const id = $(this).closest("tr").data("id");
+                getProduct(id).done(p => {
+                    fillForm(p);
+                    $("#btn-save").text("Update");
+                    setStatus("primary", `Editing #${id}`);
+                }).fail(xhr => setStatus("danger", `Load failed: ${xhr.status}`));
+            });
+
+            $("#products-table").on("click", ".act-view", function () {
+                const id = $(this).closest("tr").data("id");
+                getProduct(id).done(p => {
+                    alert(`Product #${p.id}\n\nName: ${p.name}\nDescription: ${p.description ?? ""}\nPrice: ${toCurrency(p.price)}`);
+                }).fail(xhr => setStatus("danger", `Load failed: ${xhr.status}`));
+            });
+
+            $("#products-table").on("click", ".act-del", function () {
+                const id = $(this).closest("tr").data("id");
+                if (!confirm(`Delete product #${id}?`)) return;
+
+                deleteProduct(id).done(() => {
+                    $(`#products-table tbody tr[data-id='${id}']`).remove();
+                    setStatus("success", "Deleted.");
+                    if ($("#p-id").val() == id) resetForm();
+                }).fail(xhr => setStatus("danger", `Delete failed: ${xhr.status}`));
+            });
+        });
+    </script>
+
+    <style>
+        .container {
+            max-width: 1100px;
+        }
+
+        #status {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        form .form-label {
+            font-weight: 600;
+        }
+
+        .btn-group .btn {
+            min-width: 70px;
+        }
+    </style>
+}

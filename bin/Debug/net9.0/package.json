@@ -1,0 +1,31 @@
+{
+  "name": "smartgear.pm0902",
+  "version": "1.0.0",
+  "description": "curl https://localhost:7224/products -k",
+  "main": "index.js",
+  "scripts": {
+    "build": "gulp build",
+    "watch": "gulp watch",
+    "clean": "gulp clean",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "del": "^8.0.1",
+    "gulp": "^5.0.1",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-rename": "^2.1.0",
+    "gulp-sass": "^6.0.1",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-uglify": "^3.0.2",
+    "sass": "^1.93.2"
+  },
+  "dependencies": {
+    "@popperjs/core": "^2.11.8",
+    "bootstrap": "^5.3.8",
+    "jquery": "^3.7.1"
+  }
+}
