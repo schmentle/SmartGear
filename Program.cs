@@ -22,18 +22,15 @@ builder.Services.AddHttpContextAccessor();
 builder.Services.AddScoped<IRequestTimeService, RequestTimeService>();
 builder.Services.AddTransient<RequestLoggingMiddleware>();
 
+var isDev = builder.Environment.IsDevelopment();
+
 // EF Core
-builder.Services.AddDbContext<AppDbContext>(opt =>
+builder.Services.AddDbContext<AppDbContext>(opts =>
 {
-    var csSqlite = builder.Configuration.GetConnectionString("Sqlite");
-    if (!string.IsNullOrWhiteSpace(csSqlite) && !builder.Environment.IsDevelopment())
-    {
-        opt.UseSqlite(csSqlite);
-    }
+    if (isDev)
+        opts.UseSqlServer(builder.Configuration.GetConnectionString("SqlServer"));
     else
-    {
-        opt.UseSqlServer(builder.Configuration.GetConnectionString("SqlServer")); 
-    }
+        opts.UseSqlite(builder.Configuration.GetConnectionString("Sqlite")); 
 });
 
 // Identity WITH roles (single registration)

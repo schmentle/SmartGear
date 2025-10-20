@@ -856,3 +856,4 @@ C:/Users/yentl/source/repos/SmartGear.PM0902/obj/Debug/net9.0/staticwebassets.up
 /Users/yentlnaidoo/Documents/Eureka/NQF 5 - Software dev/Design and Develop Software Applications (DDSA)/Yentl_Naidoo_400194_ DDSA_FA1/PM0912/obj/Debug/net9.0/SmartGear.PM0902.pdb
 /Users/yentlnaidoo/Documents/Eureka/NQF 5 - Software dev/Design and Develop Software Applications (DDSA)/Yentl_Naidoo_400194_ DDSA_FA1/PM0912/obj/Debug/net9.0/SmartGear.PM0902.genruntimeconfig.cache
 /Users/yentlnaidoo/Documents/Eureka/NQF 5 - Software dev/Design and Develop Software Applications (DDSA)/Yentl_Naidoo_400194_ DDSA_FA1/PM0912/obj/Debug/net9.0/ref/SmartGear.PM0902.dll
+/Users/yentlnaidoo/Documents/Eureka/NQF 5 - Software dev/Design and Develop Software Applications (DDSA)/Yentl_Naidoo_400194_ DDSA_FA1/PM0912/obj/Debug/net9.0/SmartGear.PM0902.sourcelink.json
