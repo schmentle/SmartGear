@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: smartgear
+    env: docker
+    plan: free
+    autoDeploy: true
+    envVars:
+      - key: ASPNETCORE_ENVIRONMENT
+        value: Production
+      - key: ConnectionStrings__Sqlite
+        value: Data Source=/data/app.db
+    disk:
+      name: data
+      mountPath: /data
+      sizeGB: 1
+    runtime: docker
