@@ -8,7 +8,7 @@ services:
       - key: ASPNETCORE_ENVIRONMENT
         value: Production
       - key: ConnectionStrings__Sqlite
-        value: Data Source=/data/app.db
+        value: Data Source=/tmp/app.db
     disk:
       name: data
       mountPath: /data

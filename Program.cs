@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Routing;
+using Microsoft.Data.Sqlite;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Caching.Memory;
 using SmartGear.PM0902.Data;
@@ -67,6 +68,21 @@ builder.Services.AddAuthorization(opts =>
 });
 
 builder.Services.AddSignalR();
+
+if (!builder.Environment.IsDevelopment())
+{
+    var cs = builder.Configuration.GetConnectionString("Sqlite");
+    if (!string.IsNullOrWhiteSpace(cs))
+    {
+        var b = new SqliteConnectionStringBuilder(cs);
+        var dbPath = b.DataSource;                 
+        var dir = Path.GetDirectoryName(dbPath);
+        if (!string.IsNullOrEmpty(dir) && !Directory.Exists(dir))
+        {
+            Directory.CreateDirectory(dir);        
+        }
+    }
+}
 
 var app = builder.Build();
 
