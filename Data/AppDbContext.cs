@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using SmartGear.PM0902.Models;
 using System.Text.RegularExpressions;
+using Microsoft.EntityFrameworkCore.Diagnostics;
 
 namespace SmartGear.PM0902.Data;
 
@@ -18,6 +19,12 @@ public class AppDbContext : IdentityDbContext<ApplicationUser>
         var b = new DbContextOptionsBuilder<AppDbContext>();
         b.UseSqlite("Data Source=dev.db");
         return new AppDbContext(b.Options);
+    }
+
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    {
+        optionsBuilder.ConfigureWarnings(w => w.Log(RelationalEventId.PendingModelChangesWarning));
+        base.OnConfiguring(optionsBuilder);
     }
 
     protected override void OnModelCreating(ModelBuilder b)
