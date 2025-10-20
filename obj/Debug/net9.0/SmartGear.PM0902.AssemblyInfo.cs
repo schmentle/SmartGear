@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SmartGear.PM0902")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2d72698c2742d6b950f43b9ada924b8fd4980147")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a96c3d0a7988ad034a05da66061e2ce0ff549f3e")]
 [assembly: System.Reflection.AssemblyProductAttribute("SmartGear.PM0902")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SmartGear.PM0902")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
