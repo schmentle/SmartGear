@@ -13,14 +13,6 @@ public class AppDbContext : IdentityDbContext<ApplicationUser>
 
     public DbSet<Product> Products => Set<Product>();
     public DbSet<Category> Categories => Set<Category>();
-    
-    public AppDbContext CreateDbContext(string[] args)
-    {
-        var b = new DbContextOptionsBuilder<AppDbContext>();
-        b.UseSqlite("Data Source=dev.db");
-        return new AppDbContext(b.Options);
-    }
-
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         optionsBuilder.ConfigureWarnings(w => w.Log(RelationalEventId.PendingModelChangesWarning));

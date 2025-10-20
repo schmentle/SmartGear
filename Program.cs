@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.DataProtection;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Routing;
 using Microsoft.Data.Sqlite;
@@ -23,15 +24,10 @@ builder.Services.AddHttpContextAccessor();
 builder.Services.AddScoped<IRequestTimeService, RequestTimeService>();
 builder.Services.AddTransient<RequestLoggingMiddleware>();
 
-var isDev = builder.Environment.IsDevelopment();
-
 // EF Core
 builder.Services.AddDbContext<AppDbContext>(opts =>
 {
-    if (isDev)
-        opts.UseSqlServer(builder.Configuration.GetConnectionString("SqlServer"));
-    else
-        opts.UseSqlite(builder.Configuration.GetConnectionString("Sqlite")); 
+    opts.UseSqlite(builder.Configuration.GetConnectionString("Sqlite")); 
 });
 
 // Identity WITH roles (single registration)
@@ -82,6 +78,15 @@ if (!builder.Environment.IsDevelopment())
             Directory.CreateDirectory(dir);        
         }
     }
+}
+
+if (!builder.Environment.IsDevelopment())
+{
+    var keysPath = Path.Combine("/data", "keys");
+    Directory.CreateDirectory(keysPath);
+    builder.Services.AddDataProtection()
+        .PersistKeysToFileSystem(new DirectoryInfo(keysPath))
+        .SetApplicationName("SmartGear.PM0902");
 }
 
 var app = builder.Build();
